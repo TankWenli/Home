@@ -35,25 +35,3 @@ items.forEach((el) => {
     }
 })
 
-
-// 获取幻灯片容器
-var carousel = document.querySelector('#DisplayCarousel');
-// 添加拖拽切换功能
-var startX = 0;
-var endX = 0;
-
-carousel.addEventListener('touchstart', function(e) {
-    startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener('touchend', function(e) {
-    endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-        carousel.querySelector('.carousel-control-next').click(); // 下一页
-    } else if (endX - startX > 50) {
-        carousel.querySelector('.carousel-control-prev').click(); // 上一页
-    }
-});
-
-
-
