@@ -1,0 +1,165 @@
+body{
+  background-color: gray;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.navbar{
+  background-color: rgba(28, 27, 27, 0);
+  transition: background-color 0.3s ease; /* 添加過渡效果，時間為0.3秒，緩和效果為ease */
+}
+.navbar-brand{
+  margin-left: 10px;
+}
+
+/* 自訂導覽列樣式 */
+.navbar-collapse {
+  position: fixed;
+  top: 0;
+  right: -300px; /* 將right設為-300px，將其隱藏在右側 */
+  height: 100vh;
+  width: 300px;
+  background-color: #a596a6cd;
+  padding: 20px;
+  transition: right 0.3s ease; /* 添加位移的過渡效果 */
+  z-index: 100; /* 設定z-index，以免被其他元素遮擋 */
+}
+
+/* 當導覽列顯示時，將right設為0，使其從右側滑入 */
+.navbar-collapse.show {
+  right: 0;
+}
+
+/* 關閉按鈕的樣式 */
+.btn-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  transition: transform 1s; /* 添加旋轉的過渡效果，這裡改為1秒 */
+}
+
+
+.navbar-nav li a {
+  position: relative;
+  color: rgb(248, 248, 247) !important;
+  font-size: 18px;
+  text-align: center;
+}
+
+.navbar-nav li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  left: 50%; /* 設置初始時線的起始位置在中間 */
+  width: 10%; /* 設置初始寬度為10% */
+  height: 2px;
+  background-color: #e8d7d7;
+  transition: width 0.3s, left 0.3s; /* 添加寬度和左側位置變化的過渡效果 */
+  transform: translateX(-50%); /* 將線水平居中對齊連結文字 */
+}
+
+/* 滑鼠指到時讓線變長且左右平均擴展20% */
+.navbar-nav li a:hover::after {
+  width: 30%; /* 將線的寬度設置為60%以展開線的長度 */
+  
+}
+
+.navbar-toggler{
+  margin-right: 30px;
+  border: none; /* 移除按鈕的邊框 */
+  background-color: transparent; /* 設定按鈕的背景為透明 */
+  padding: 0; /* 移除按鈕的內邊距，讓按鈕沒有額外的空間 */
+}
+
+
+/* 以下 CSS 用於將 Instagram 和 Facebook 圖示顏色調整為黑色 */
+.header-social-area{
+  color: black;
+  margin-right: 50px;
+}
+
+
+.header-social-area a i {
+  color: black;
+  margin-right: 20px;
+}
+
+/* 調整導覽連結&文字的寬度和間距 */
+.nav-link {
+  padding: 25px 25px; /* 將左右內邊距減少為 10px，保持上下內 */
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #2f2f2f;
+  font-weight: 300; }
+
+
+  /*
+@media (max-width:600px){
+  nav{
+      height:auto;
+  }
+  .nav-link {
+      padding:10px;
+  }
+}
+*/
+
+/* 幻燈片 小螢幕下 */
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+      display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+      display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* 幻燈片 大螢幕下 */
+@media (min-width: 768px) {
+  
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.33%);
+  }
+  
+  .carousel-inner .carousel-item-start.active, 
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.33%);
+  }
+
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+transform: translateX(0);
+}
+
+/* 幻燈片下文字 */
+.slide-content .carousel-caption {
+  position: relative;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding: 10px;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  font-size: 30px;
+}
+
+/* 图片上方的文字悬停效果 */
+.slide-content:hover .carousel-caption {
+  transform: translateY(-50px);
+}

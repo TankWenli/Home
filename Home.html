@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homep page</title>
+        <meta charset="UTF-8">
+        <!-- 響應式網站 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boostrap5.0 導入程式 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+        <!-- 引入 Font Awesome 圖示庫 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <!-- 連結CSS -->
+        <link rel="stylesheet" href="style.css">
+    
+       
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-xxxl navbar-light fixed-top">
+            <div class="container-fluid">
+                <!-- 品牌logo -->
+                <a class="navbar-brand" href="Home.html"><img width="50px" height="50px" src="IMG/favicon.ico"></a>
+
+                <!-- 第一部份：製作 navbar 顯示 -->
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+                    
+                    <div class="menu-content-area d-flex align-items-center">
+                        
+                        <!-- Header Social Area -->
+                        <div class="header-social-area d-flex align-items-center">
+                        <a href="https://www.instagram.com" data-bs-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://zh-tw.facebook.com" data-bs-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        </div>
+                    
+                    <span class="navbar-toggler-icon"></span>
+                    </div>
+                </button>
+
+                <!-- 第二部份：navbar 內文 -->
+                    
+                <div class="collapse navbar-collapse" id="linkbar">
+                    <!-- Close按鈕 -->
+                    <button type="button" class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#linkbar" aria-label="Close"></button>
+      
+                    <!-- 列出內容 -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                   
+                    <!-- 列出到右邊 -->
+                    <form style="width:300px;" class="input-group">
+                        <input  class="form-control me-3" type="search" placeholder="搜尋">
+                        <button  class="btn btn-success" type="submit">搜尋</button>
+
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-- 幻燈片 -->
+        <div class="row my-auto justify-content-center">
+            <div id="DisplayCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4182.jpeg" class="img-fluid" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">季節鮮花</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4199.jpeg" class="img-fluid" alt="Slide 2">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">永生花束</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4249.jpeg" class="img-fluid" alt="Slide 3">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">單體花材</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4259.jpeg" class="img-fluid" alt="Slide 4">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">單體花材變化</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4668.jpeg" class="img-fluid" alt="Slide 5">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">永生乾燥花單品</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4756.jpeg" class="img-fluid" alt="Slide 6">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">永生乾燥花</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4761.jpeg" class="img-fluid" alt="Slide 7">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">永生乾燥花-賀禮</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-4">
+                            <div class="slide-content">
+                                <img src="IMG/DSCF4773.jpeg" class="img-fluid" alt="Slide 8">
+                                <div class="carousel-caption">
+                                    <p class="caption-text">永生花束-賀禮</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev bg-transparent w-aut" href="#DisplayCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next bg-transparent w-aut" href="#DisplayCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        
+        
+        
+        <script src="script.js"></script>
+    </body>
+            
+    
+</html>
