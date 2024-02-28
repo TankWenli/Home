@@ -1,12 +1,17 @@
-body{
-  background-color: gray;
-  font-family: "Noto Sans TC", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+  background-color: rgb(230, 225, 225);
+  font-family: "Josefin Sans","翩翩體-繁",sans-serif;
 }
+
 
 .navbar{
   background-color: rgba(28, 27, 27, 0);
   transition: background-color 0.3s ease; /* 添加過渡效果，時間為0.3秒，緩和效果為ease */
 }
+
 .navbar-brand{
   margin-left: 10px;
 }
@@ -18,7 +23,7 @@ body{
   right: -300px; /* 將right設為-300px，將其隱藏在右側 */
   height: 100vh;
   width: 300px;
-  background-color: #a596a6cd;
+  background-color: #69656acd;
   padding: 20px;
   transition: right 0.3s ease; /* 添加位移的過渡效果 */
   z-index: 100; /* 設定z-index，以免被其他元素遮擋 */
@@ -34,14 +39,14 @@ body{
   position: absolute;
   top: 5px;
   right: 10px;
-  transition: transform 1s; /* 添加旋轉的過渡效果，這裡改為1秒 */
+  transition: transform 0.5s; /* 添加旋轉的過渡效果，這裡改為0.5秒 */
 }
 
 
 .navbar-nav li a {
   position: relative;
-  color: rgb(248, 248, 247) !important;
-  font-size: 18px;
+  color: rgb(248, 245, 247) !important;
+  font-size: 21px;
   text-align: center;
 }
 
@@ -60,7 +65,7 @@ body{
 
 /* 滑鼠指到時讓線變長且左右平均擴展20% */
 .navbar-nav li a:hover::after {
-  width: 30%; /* 將線的寬度設置為60%以展開線的長度 */
+  width: 30%; /* 將線的寬度設置為30%以展開線的長度 */
   
 }
 
@@ -74,24 +79,26 @@ body{
 
 /* 以下 CSS 用於將 Instagram 和 Facebook 圖示顏色調整為黑色 */
 .header-social-area{
-  color: black;
-  margin-right: 50px;
+  position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
 }
 
 
 .header-social-area a i {
   color: black;
-  margin-right: 20px;
+  font-size: 28px;
+  margin-right: 25px;
 }
+
+
 
 /* 調整導覽連結&文字的寬度和間距 */
 .nav-link {
-  padding: 25px 25px; /* 將左右內邊距減少為 10px，保持上下內 */
+  padding: 20px 20px; /* 將左右內邊距減少為 25px，保持上下內 */
 }
 
-h1,h2,h3,h4,h5,h6 {
-  color: #2f2f2f;
-  font-weight: 300; }
 
 
   /*
@@ -142,12 +149,12 @@ transform: translateX(0);
 }
 
 /* 幻燈片下文字 */
-.slide-content .carousel-caption {
+.slide-content{
   position: relative;
 }
 
 .carousel-caption {
-  position: absolute;
+  position: relative;
   bottom: 80px;
   left: 0;
   width: 100%;
@@ -159,7 +166,80 @@ transform: translateX(0);
   font-size: 30px;
 }
 
-/* 图片上方的文字悬停效果 */
 .slide-content:hover .carousel-caption {
-  transform: translateY(-50px);
+  transform: translateY(-35px); /* 将文字上提 20 像素 */
+  transition: transform 0.3s ease; /* 添加过渡效果，使过渡更平滑 */
 }
+
+.caption-text {
+  display: inline; /* 使caption-text以内联方式显示，以便将gif-container放在最后一个字母后面 */
+}
+
+
+.information {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .information {
+    flex-direction: column; /* 将元素在垂直方向排列 */
+  }
+}
+
+.contact {
+  color: rgb(66, 61, 56);
+  text-align: left; /* 设置文本居中 */
+  line-height: 2; /* 调整行高，使文字更易读 */
+  font-size: 25px;
+  padding-left: 40px;
+}
+.contact_detail {
+  color: rgb(66, 61, 56);
+  text-align: left; /* 设置文本居中 */
+  line-height: 1.5; /* 调整行高，使文字更易读 */
+  font-size: 20px;
+  padding-left: 40px;
+}
+
+.location {
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 2; /* 调整行高，使文字更易读 */
+  font-size: 25px;
+  padding-left: 40px;
+}
+
+.location_detail {
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 1.5; /* 调整行高，使文字更易读 */
+  font-size: 20px;
+  padding-left: 40px;
+}
+
+.footer {
+  text-align: center;
+  color: rgb(92, 86, 78);
+  font-size: 18px;
+  line-height: 1.5; /* 调整行高，使文字更易读 */
+}
+
+/* 調整 GIF 大小 */
+.gif-image {
+  width: 40px; /* 設定 GIF 寬度 */
+  height: auto; /* 自動計算高度以保持比例 */
+}
+
+/* 調整 GIF 位置 */
+.gif-container {
+  display: inline-block;
+  vertical-align: middle; /* 垂直居中對齊，可根據需要進行調整 */
+}
+
+/* 初始隱藏所有 GIF 圖像 */
+.gif-image {
+  visibility: hidden;
+}
+
+
+

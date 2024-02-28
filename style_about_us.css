@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+  background-color: rgb(230, 225, 225);
+  font-family: "Josefin Sans","翩翩體-繁",sans-serif;
+}
+  
+  .navbar{
+    background-color: rgba(28, 27, 27, 0);
+    transition: background-color 0.3s ease; /* 添加過渡效果，時間為0.3秒，緩和效果為ease */
+  }
+  
+  .navbar-brand{
+    margin-left: 10px;
+  }
+  
+  /* 自訂導覽列樣式 */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -300px; /* 將right設為-300px，將其隱藏在右側 */
+    height: 100vh;
+    width: 300px;
+    background-color: #69656acd;
+    padding: 20px;
+    transition: right 0.3s ease; /* 添加位移的過渡效果 */
+    z-index: 100; /* 設定z-index，以免被其他元素遮擋 */
+  }
+  
+  /* 當導覽列顯示時，將right設為0，使其從右側滑入 */
+  .navbar-collapse.show {
+    right: 0;
+  }
+  
+  /* 關閉按鈕的樣式 */
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transition: transform 0.5s; /* 添加旋轉的過渡效果，這裡改為0.5秒 */
+  }
+  
+  
+  .navbar-nav li a {
+    position: relative;
+    color: rgb(248, 245, 247) !important;
+    font-size: 21px;
+    text-align: center;
+  }
+  
+  .navbar-nav li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 50%; /* 設置初始時線的起始位置在中間 */
+    width: 10%; /* 設置初始寬度為10% */
+    height: 2px;
+    background-color: #e8d7d7;
+    transition: width 0.3s, left 0.3s; /* 添加寬度和左側位置變化的過渡效果 */
+    transform: translateX(-50%); /* 將線水平居中對齊連結文字 */
+  }
+  
+  /* 滑鼠指到時讓線變長且左右平均擴展20% */
+  .navbar-nav li a:hover::after {
+    width: 30%; /* 將線的寬度設置為30%以展開線的長度 */
+  }
+  
+  .navbar-toggler{
+    margin-right: 30px;
+    border: none; /* 移除按鈕的邊框 */
+    background-color: transparent; /* 設定按鈕的背景為透明 */
+    padding: 0; /* 移除按鈕的內邊距，讓按鈕沒有額外的空間 */
+  }
+  
+  /* 以下 CSS 用於將 Instagram 和 Facebook 圖示顏色調整為黑色 */
+  .header-social-area{
+    position: absolute;
+      right: 100px;
+      display: flex;
+      align-items: center;
+  }
+  
+  .header-social-area a i {
+    color: black;
+    font-size: 28px;
+    margin-right: 25px;
+  }
+  
+  /* 調整導覽連結&文字的寬度和間距 */
+  .nav-link {
+    padding: 20px 20px; /* 將左右內邊距減少為 25px，保持上下內 */
+  }
+
+/* About us body */
+.container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.animated-box {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.animated-box:hover {
+    transform: scale(1.1);
+}
+
+.float-left {
+    float: left;
+    clear: left;
+    margin-right: 20px;
+}
+
+.float-right {
+    float: right;
+    clear: right;
+    margin-left: 20px;
+}
+
+.slide-in {
+    transform: translateX(-100%);
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+to {
+    transform: translateX(0);
+}
+}
+
+.slide-in-right {
+    transform: translateX(100%);
+    animation: slideInRight 1s ease forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.footer {
+    text-align: center;
+    color: rgb(92, 86, 78);
+    font-size: 18px;
+    line-height: 1.5; /* 调整行高，使文字更易读 */
+  }
