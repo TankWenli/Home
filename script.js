@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //     根據滾動距離計算透明度
     const opacity = Math.min(1, Math.max(0, scrollTop / scrollThreshold));
-    navbar.style.backgroundColor = `rgba(200, 198, 200, ${opacity})`;
+    navbar.style.backgroundColor = `rgba(221, 213, 202, ${opacity})`;
   }
 
 //  監聽網頁滾動事件，並呼叫函數來更新導覽列的透明度
