@@ -175,76 +175,64 @@ transform: translateX(0);
   display: inline; /* 使caption-text以内联方式显示，以便将gif-container放在最后一个字母后面 */
 }
 
-
 .information_1{
-  display: flex;
+  overflow-x: hidden; /* 禁止左右滑动 */
+  padding-left: 50px;
 }
 
-.information_2 {
-  display: flex;
-}
-
-
-@media screen and (max-width: 768px) {
-  .information_1 {
-    flex-direction: column; /* 将元素在垂直方向排列 */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .information_2 {
-    flex-direction: column; /* 将元素在垂直方向排列 */
-  }
+.information_2{
+  overflow-x: hidden; /* 禁止左右滑动 */
+  padding-left: 50px;
 }
 
 .contact {
   color: rgb(66, 61, 56);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 .contact_detail {
   color: rgb(66, 61, 56);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .location {
   color: rgb(69, 69, 60);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .location_detail {
   color: rgb(69, 69, 60);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .service{
   color: rgb(69, 69, 60);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .service_detail{
   color: rgb(69, 69, 60);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .support {
   color: rgb(69, 69, 60);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .support_detail{
   color: rgb(69, 69, 60);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .footer {
+  padding-top: 50px;
   text-align: center;
   color: rgb(92, 86, 78);
   font-size: 13px;
-  line-height: 1.5; /* 调整行高，使文字更易读 */
 }
 
 /* 調整 GIF 大小 */
