@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 body {
   background-color: rgb(230, 225, 225);
-  font-family: "Josefin Sans","翩翩體-繁",sans-serif;
+  font-family: "Josefin Sans",sans-serif;
 }
 
 
 .navbar{
-  background-color: rgba(28, 27, 27, 0);
+  background-color: rgba(255, 255, 255, 0);
   transition: background-color 0.3s ease; /* 添加過渡效果，時間為0.3秒，緩和效果為ease */
 }
 
@@ -37,9 +36,10 @@ body {
 /* 關閉按鈕的樣式 */
 .btn-close {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 30px;
+  right: 30px;
   transition: transform 0.5s; /* 添加旋轉的過渡效果，這裡改為0.5秒 */
+  z-index: 10000;
 }
 
 
@@ -87,7 +87,7 @@ body {
 
 
 .header-social-area a i {
-  color: black;
+  color: rgb(90, 90, 90);
   font-size: 28px;
   margin-right: 25px;
 }
@@ -163,7 +163,7 @@ transform: translateX(0);
   padding: 10px;
   transform: translateY(0);
   transition: transform 0.5s ease;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .slide-content:hover .carousel-caption {
@@ -176,12 +176,23 @@ transform: translateX(0);
 }
 
 
-.information {
+.information_1{
   display: flex;
 }
 
+.information_2 {
+  display: flex;
+}
+
+
 @media screen and (max-width: 768px) {
-  .information {
+  .information_1 {
+    flex-direction: column; /* 将元素在垂直方向排列 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .information_2 {
     flex-direction: column; /* 将元素在垂直方向排列 */
   }
 }
@@ -190,14 +201,15 @@ transform: translateX(0);
   color: rgb(66, 61, 56);
   text-align: left; /* 设置文本居中 */
   line-height: 2; /* 调整行高，使文字更易读 */
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 40px;
+  font-weight: bold;
 }
 .contact_detail {
   color: rgb(66, 61, 56);
   text-align: left; /* 设置文本居中 */
   line-height: 1.5; /* 调整行高，使文字更易读 */
-  font-size: 20px;
+  font-size: 16px;
   padding-left: 40px;
 }
 
@@ -205,28 +217,63 @@ transform: translateX(0);
   color: rgb(69, 69, 60);
   text-align: left; /* 设置文本居中 */
   line-height: 2; /* 调整行高，使文字更易读 */
-  font-size: 25px;
+  font-size: 20px;
   padding-left: 40px;
+  font-weight: bold;
 }
 
 .location_detail {
   color: rgb(69, 69, 60);
   text-align: left; /* 设置文本居中 */
   line-height: 1.5; /* 调整行高，使文字更易读 */
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.service{
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 2; /* 调整行高，使文字更易读 */
   font-size: 20px;
+  padding-left: 40px;
+  font-weight: bold;
+}
+
+.service_detail{
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 1.5; /* 调整行高，使文字更易读 */
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.support {
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 2; /* 调整行高，使文字更易读 */
+  font-size: 20px;
+  padding-left: 40px;
+  font-weight: bold;
+}
+
+.support_detail{
+  color: rgb(69, 69, 60);
+  text-align: left; /* 设置文本居中 */
+  line-height: 1.5; /* 调整行高，使文字更易读 */
+  font-size: 16px;
   padding-left: 40px;
 }
 
 .footer {
   text-align: center;
   color: rgb(92, 86, 78);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5; /* 调整行高，使文字更易读 */
 }
 
 /* 調整 GIF 大小 */
 .gif-image {
-  width: 40px; /* 設定 GIF 寬度 */
+  width: 30px; /* 設定 GIF 寬度 */
   height: auto; /* 自動計算高度以保持比例 */
 }
 
