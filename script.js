@@ -64,45 +64,97 @@ slideContents.forEach((slideContent) => {
     });
 });
 
-//產品JS
+// 產品JS
 function changeContent(flowerType) {
   const freshFlower = document.getElementById('freshFlower');
   const eternalFlower = document.getElementById('eternalFlower');
-  const productList = document.getElementById('productList');
+  const productListFresh = document.getElementById('productListFresh');
+  const productListEternal = document.getElementById('productListEternal');
+  const backButton = document.querySelector('.back-button');
+  const freshFlowerText = document.querySelector('.freshFlower-text');
+  const eternalFlowerText = document.querySelector('.eternalFlower-text');
 
+  // 删除现有的花卉类型文字元素
+  removeFlowerTypeText();
+
+  // 隱藏雙圖
+  freshFlower.style.display = 'none';
+  eternalFlower.style.display = 'none';
+
+  // 隱藏文字
+  freshFlowerText.style.display = 'none';
+  eternalFlowerText.style.display = 'none';
+
+  // 根據鮮花或永生花顯示對應的商品清單
   if (flowerType === 'freshFlower') {
-      // 實現鮮花效果
-      freshFlower.style.transform = 'translateY(-100%)';
-      freshFlower.style.opacity = '0';
-      eternalFlower.style.display = 'none';
+    productListFresh.style.display = 'flex';
+    productListEternal.style.display = 'none';
+  } else {
+    productListFresh.style.display = 'none';
+    productListEternal.style.display = 'flex';
+  }
 
-      // 延遲切換至商品清單
-      setTimeout(() => {
-          productList.style.display = 'flex';
-      }, 1000);
-  } else if (flowerType === 'eternalFlower') {
-      // 實現永生花效果
-      eternalFlower.style.transform = 'translateY(-100%)';
-      eternalFlower.style.opacity = '0';
-      freshFlower.style.display = 'none';
+  // 顯示返回按鈕
+  backButton.style.display = 'block';
 
-      // 延遲切換至商品清單
-      setTimeout(() => {
-          productList.style.display = 'flex';
-      }, 1000);
+  // 如果需要，為商品清單添加淡入效果
+  if (flowerType === 'freshFlower') {
+    productListFresh.classList.add('fade-in');
+  } else {
+    productListEternal.classList.add('fade-in');
+  }
+
+  // 顯示相對文字
+  const flowerTypeText = (flowerType === 'freshFlower') ? 'Fresh Flower' : 'Eternal Flower';
+  showFlowerTypeText(flowerTypeText);
+}
+
+// 删除花卉类型文字元素
+function removeFlowerTypeText() {
+  const flowerTypeTextElement = document.querySelector('.flower-type-text');
+  if (flowerTypeTextElement) {
+      flowerTypeTextElement.parentNode.removeChild(flowerTypeTextElement);
   }
 }
 
-// 商品清單項目滑鼠事件處理
-const productItems = document.querySelectorAll('.product-item');
-productItems.forEach((item) => {
-  item.addEventListener('mouseenter', () => {
-      // 商品清單項目滑鼠進入時的效果
-      // 你可以在這裡添加相應的效果
-  });
+// 显示花卉类型文字
+function showFlowerTypeText(text) {
+  const flowerTypeTextElement = document.createElement('div');
+  flowerTypeTextElement.textContent = text;
+  flowerTypeTextElement.classList.add('flower-type-text');
+  const flowerTypeInfo = document.querySelector('.flower-type-info');
+  flowerTypeInfo.appendChild(flowerTypeTextElement);
+}
 
-  item.addEventListener('mouseleave', () => {
-      // 商品清單項目滑鼠離開時的效果
-      // 你可以在這裡添加相應的效果
-  });
-});
+// 返回鍵功能
+function goBack() {
+  const freshFlower = document.getElementById('freshFlower');
+  const eternalFlower = document.getElementById('eternalFlower');
+  const backButton = document.querySelector('.back-button');
+  const productListFresh = document.getElementById('productListFresh');
+  const productListEternal = document.getElementById('productListEternal');
+  const freshFlowerText = document.querySelector('.freshFlower-text');
+  const eternalFlowerText = document.querySelector('.eternalFlower-text');
+
+  // 顯示雙圖，隱藏商品清單和返回按鈕
+  freshFlower.style.display = 'block';
+  eternalFlower.style.display = 'block';
+  productListFresh.style.display = 'none';
+  productListEternal.style.display = 'none';
+  backButton.style.display = 'none';
+  freshFlowerText.style.display = 'block';
+  eternalFlowerText.style.display = 'block';
+  // 移除花卉類型文字元素
+  removeFlowerTypeText();
+}
+
+// 清單相片轉換
+function changeProductImage(element) {
+  const hoverImage = element.querySelector('.hover-image');
+  hoverImage.style.opacity = '0';
+}
+
+function restoreProductImage(element) {
+  const hoverImage = element.querySelector('.hover-image');
+  hoverImage.style.opacity = '1';
+}
