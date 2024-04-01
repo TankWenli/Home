@@ -70,7 +70,9 @@ body {
 }
 
 .navbar-toggler{
-  margin-right: 30px;
+  font-size:20px;
+  margin-top: 0px;
+  margin-right: 20px;
   border: none; /* 移除按鈕的邊框 */
   background-color: transparent; /* 設定按鈕的背景為透明 */
   padding: 0; /* 移除按鈕的內邊距，讓按鈕沒有額外的空間 */
@@ -252,6 +254,3 @@ transform: translateX(0);
 .gif-image {
   visibility: hidden;
 }
-
-
-
