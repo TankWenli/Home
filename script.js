@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //     根據滾動距離計算透明度
     const opacity = Math.min(1, Math.max(0, scrollTop / scrollThreshold));
-    navbar.style.backgroundColor = `rgba(221, 213, 202, ${opacity})`;
+    navbar.style.backgroundImage = `linear-gradient(to bottom, rgba(221, 213, 202, ${opacity}) 10%, transparent 90%)`;
   }
 
 //  監聽網頁滾動事件，並呼叫函數來更新導覽列的透明度
@@ -41,28 +41,16 @@ displayCarousel.addEventListener("slide.bs.carousel", (event) => {
   resetAllGifs(slideContents);
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  var imgHeight = document.querySelector('.img-fluid').clientHeight;
+  var slideContent = document.querySelectorAll('.slide-content');
 
-// GIF
-// 獲取所有 "carousel-caption" 元素
-const slideContents = document.querySelectorAll('.slide-content');
-
-// 遍歷每個 "carousel-caption" 元素
-slideContents.forEach((slideContent) => {
-    // 尋找與當前 "carousel-caption" 相關聯的 GIF 圖像
-    const gifImage = slideContent.querySelector('.gif-image');
-
-    // 使用 mouseenter 和 mouseleave 事件監聽器
-    slideContent.addEventListener('mouseenter', () => {
-        // 滑鼠進入時顯示 GIF 圖像
-        gifImage.style.visibility = 'visible';
-    });
-
-    slideContent.addEventListener('mouseleave', () => {
-        // 滑鼠離開時隱藏 GIF 圖像
-        gifImage.style.visibility = 'hidden';
-        gifImage.src = gifImage.src; // 通过重新设置 src 属性来强制重新加载 GIF
-    });
+  slideContent.forEach(function(content) {
+      content.style.height = imgHeight + "px";
+  });
 });
+
+
 
 // 產品JS
 function changeContent(flowerType) {
@@ -76,6 +64,9 @@ function changeContent(flowerType) {
 
   // 删除现有的花卉类型文字元素
   removeFlowerTypeText();
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 0);
 
   // 隱藏雙圖
   freshFlower.style.display = 'none';
@@ -107,6 +98,7 @@ function changeContent(flowerType) {
   // 顯示相對文字
   const flowerTypeText = (flowerType === 'freshFlower') ? 'Fresh Flower' : 'Eternal Flower';
   showFlowerTypeText(flowerTypeText);
+
 }
 
 // 删除花卉类型文字元素
