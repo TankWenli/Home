@@ -19,36 +19,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //幻燈片
-let items = document.querySelectorAll(".carousel .carousel-item")
-
-items.forEach((el) => {
-    const minPerSlide = 3
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-        	next = items[0]
-      	}
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
-
-// 監聽幻燈片切換事件
-const displayCarousel = document.getElementById("DisplayCarousel");
-displayCarousel.addEventListener("slide.bs.carousel", (event) => {
-  resetAllGifs(slideContents);
-});
-
+function resetAllGifs(slideContents) {
+  // 示例逻辑：重新加载所有 GIF 图像以重置动画
+  slideContents.forEach(content => {
+      const gifs = content.querySelectorAll("img[src*='.gif']");
+      gifs.forEach(gif => {
+          gif.src = gif.src; // 重新加载 GIF
+      });
+  });
+}
 document.addEventListener("DOMContentLoaded", function() {
+  // 获取 carousel 元素和 slide contents
+  const displayCarousel = document.getElementById("DisplayCarousel");
+  const slideContents = document.querySelectorAll('.slide-content');
+  
+  // 设置 img-fluid 的高度
   var imgHeight = document.querySelector('.img-fluid').clientHeight;
-  var slideContent = document.querySelectorAll('.slide-content');
-
-  slideContent.forEach(function(content) {
+  slideContents.forEach(content => {
       content.style.height = imgHeight + "px";
   });
+
+  // 设置 carousel 的事件监听器
+  if (displayCarousel) {
+      displayCarousel.addEventListener("slide.bs.carousel", (event) => {
+          resetAllGifs(slideContents); // 调用重置 GIF 的函数
+      });
+  }
+
+  // 设置 carousel 中的元素复制逻辑
+  let items = document.querySelectorAll(".carousel .carousel-item");
+  items.forEach((el) => {
+      const minPerSlide = 3;
+      let next = el.nextElementSibling;
+      for (var i = 1; i < minPerSlide; i++) {
+          if (!next) {
+              // 如果没有下一个元素，则循环回第一个
+              next = items[0];
+          }
+          let cloneChild = next.cloneNode(true);
+          el.appendChild(cloneChild.children[0]);
+          next = next.nextElementSibling;
+      }
+  });
 });
+
 
 
 
