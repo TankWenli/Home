@@ -21,15 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    // 设置 img-fluid 的高度
-    const imgElement = document.querySelector('.img-fluid');
-    if (imgElement) {
-        const imgHeight = imgElement.clientHeight;
-        slideContents.forEach(content => {
-            content.style.height = imgHeight + "px"; // 将所有 slide 内容的高度设置为图片的高度
-        });
-    }
-
     // 设置 carousel 中的元素复制逻辑
     const items = document.querySelectorAll(".carousel .carousel-item");
     items.forEach(el => {
