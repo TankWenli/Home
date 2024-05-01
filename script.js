@@ -1,6 +1,5 @@
 "use strict"; // 使用严格模式
 
-
 // 根据滚动距离更新导航栏的透明度
 function updateNavbarOpacity(navbar, scrollThreshold) {
     const scrollTop = window.scrollY;
@@ -8,27 +7,37 @@ function updateNavbarOpacity(navbar, scrollThreshold) {
     navbar.style.backgroundImage = `linear-gradient(to bottom, rgba(221, 213, 202, ${opacity}) 10%, transparent 90%)`;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     const displayCarousel = document.getElementById("DisplayCarousel");
     const slideContents = document.querySelectorAll('.slide-content');
     const scrollThreshold = 100; // 设置滚动多远开始不透明
 
     if (navbar) {
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             updateNavbarOpacity(navbar, scrollThreshold); // 监听滚动事件
         });
     }
 
+    // 设置 img-fluid 的高度
+    const imgElement = document.querySelector('.img-fluid');
+    if (imgElement) {
+        imgElement.addEventListener("load", function () {
+            const imgHeight = imgElement.clientHeight; // 在图片加载完成后获取高度
+            slideContents.forEach(content => {
+                content.style.height = imgHeight + "px"; // 将所有 slide 内容的高度设置为图片的高度
+            });
+        });
+    }
 
     // 设置 carousel 中的元素复制逻辑
     const items = document.querySelectorAll(".carousel .carousel-item");
     items.forEach(el => {
-        const minPerSlide = 3;
+        const minPerSlide = 3; // 每个幻灯片的最小子元素数量
         let next = el.nextElementSibling;
         for (let i = 1; i < minPerSlide; i++) {
             if (!next) {
-                next = items[0]; // 循环回第一个
+                next = items[0]; // 如果没有下一个元素，则循环回第一个
             }
             const cloneChild = next.cloneNode(true); // 克隆子元素
             el.appendChild(cloneChild.children[0]); // 添加到当前幻灯片
@@ -36,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 // 產品JS
 function changeContent(flowerType) {
