@@ -1,15 +1,5 @@
 "use strict"; // 使用严格模式
 
-// 重置所有 GIF 图像的函数
-function resetAllGifs(slideContents) {
-    slideContents.forEach(content => {
-        const gifs = content.querySelectorAll("img[src*='.gif']");
-        gifs.forEach(gif => {
-            gif.src = gif.src; // 重新加载 GIF 图像
-        });
-    });
-}
-
 // 根据滚动距离更新导航栏的透明度
 function updateNavbarOpacity(navbar, scrollThreshold) {
     const scrollTop = window.scrollY;
