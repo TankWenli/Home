@@ -1,5 +1,6 @@
 "use strict"; // 使用严格模式
 
+
 // 根据滚动距离更新导航栏的透明度
 function updateNavbarOpacity(navbar, scrollThreshold) {
     const scrollTop = window.scrollY;
@@ -19,11 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (displayCarousel) {
-        displayCarousel.addEventListener("slide.bs.carousel", function() {
-            resetAllGifs(slideContents); // 在幻灯片切换时重置 GIF
-        });
-    }
 
     // 设置 img-fluid 的高度
     const imgElement = document.querySelector('.img-fluid');
