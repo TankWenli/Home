@@ -252,7 +252,7 @@ transform: translateX(0);
   z-index: 99999;
   position: fixed;
   bottom: 60px;
-  right: 80px;
+  right: 40px;
   cursor: pointer;
   opacity: 0.5;
   filter: Alpha(opacity=50);
